@@ -8,7 +8,7 @@ function EscolherFlor({ flores, setFlores }) {
 
     return (
         <div className="escolher-flor">
-            <h2>Escolha suas flores!</h2>
+            <h3>Escolha suas flores!</h3>
 
 
             <div className="lista-flores">

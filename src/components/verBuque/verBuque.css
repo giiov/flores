@@ -1,49 +1,130 @@
 .ver-buque {
-  padding: 16px;
-  position: relative;
-  border: 2px solid #f4a7c1;
-  border-radius: 16px;
-  background-color: #fff0f5;
-  color: black;
-  overflow: hidden;
-}
-
-/* Área para o buquê */
-.flores-buque {
-  position: relative; /* ESSENCIAL para sobreposição */
-  width: 300px;
-  height: 250px;
-  margin: 0 auto;
-  border: 2px dashed pink;
-
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  width: 100%;
+}
+
+/*Buquê + Cartão */
+.buque-area {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  /*buquê de um lado e cartão do outro */
+  align-items: center;
   justify-content: center;
-  align-items: flex-end;
-  overflow: hidden;
+  padding: 40px;
+  border-radius: 30px;
+  gap: 30px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 15px 35px rgba(255, 182, 193, 0.2);
+
 }
 
-/* Cada flor */
-.flor-buque {
-  position: absolute; /* permite sobrepor */
-  bottom: 0px;
-  width: 90px;
-  transition: transform 0.3s;
-  margin-bottom: 70px;
-}
 
-.flor {
-  transition: transform 0.2s;
-}
-
-.flor:hover {
-  transform: scale(1.2);
-}
-
-.vaso-buque {
-  position: absolute;
-  bottom: 0;
-  width: 160px;
-  left: 50%;
-  transform: translateX(-50%);
+.buque-visual {
+  position: relative;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   z-index: 10;
+}
+
+.flores-camada {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  z-index: 1;
+
+}
+
+/*imagem da flor individual */
+.flor-buque {
+  position: absolute;
+  width: 130px;
+  object-fit: contain;
+  margin-bottom: -113px;
+
+}
+
+/*Vaso */
+.vaso-buque {
+  width: 160px;
+  z-index: 5;
+  margin-top: -60px;
+  filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.1));
+  margin-bottom: -12px;
+}
+
+/* Carrossel de Vasos (agora fora do empilhamento absoluto) */
+.carrossel-vaso {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: white;
+  padding: 5px 15px;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(255, 182, 193, 0.3);
+  z-index: 20;
+  color: black;
+}
+
+/* Aviso de vazio */
+.aviso-vazio {
+  position: absolute;
+  bottom: 200px;
+  width: 100%;
+  text-align: center;
+  color: #f4a7c1;
+  font-style: italic;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.btn-cartao {
+  background-color: #ff8fb3;
+  color: white;
+  border: none;
+  padding: 15px 25px;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(255, 143, 179, 0.4);
+  transition: 0.3s;
+}
+
+.btn-cartao:hover {
+  transform: scale(1.05);
+  background-color: #ff709b;
+}
+
+  .cartao-area {
+  position: relative; 
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .buque-area {
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 10px;
+  }
+
+  .buque-visual {
+    width: 300px;
+  }
+
+  .cartao-visual {
+    width: 300px;
+    height: 190px;
+  }
 }

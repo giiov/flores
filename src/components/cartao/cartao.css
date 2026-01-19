@@ -1,0 +1,105 @@
+.cartao-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 350px;
+  font-family: "Segoe UI", sans-serif;
+  z-index: 50;
+}
+
+/* Título */
+.cartao-container h2 {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+}
+
+/* Carrossel do cartão */
+.cartao-carrossel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cartao-carrossel button {
+  background-color: #ffe6f0;
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: 0.2s;
+}
+
+.cartao-carrossel button:hover {
+  transform: scale(1.1);
+}
+
+
+.cartao-visual {
+  width: 250px;
+  height: 150px;
+  margin-bottom: 20px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.cartao-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.4s ease-in-out, opacity 0.3s;
+  backface-visibility: hidden;
+  filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+
+/*animação de virar a folha */
+.cartao-visual.virando img {
+  transform: rotateY(-90deg);
+  opacity: 0.5;
+}
+
+/*area para escrever a mensagem */
+.mensagem-area {
+  width: 100%;
+  z-index: 200;
+  position: relative;
+  margin-top: 15px;
+}
+
+.mensagem-area textarea {
+  width: 100%;
+  height: 90px;
+  border-radius: 15px;
+  border: 2px solid #ffecf1;
+  padding: 10px;
+  font-size: 14px;
+  font-family: 'Segoe UI', cursive;
+  resize: none;
+  box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.7);
+  outline: none;
+  z-index: 120;
+  position: relative;
+  pointer-events: all !important;
+  touch-action: manipulation;
+  cursor: text;
+}
+
+/* Botão finalizar buquê */
+.mensagem-area button {
+  align-self: flex-end;
+  background-color: #ffb6c1;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.mensagem-area button:hover {
+  background-color: #ff8fb3;
+}

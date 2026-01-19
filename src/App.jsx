@@ -1,41 +1,49 @@
-import { useState } from "react"
+import { useState } from "react";
 
 // componentes
-import EscolherFlor from "./components/escolherFlor/escolherFlor"
-import EscolherVaso from "./components/escolherVaso/escolherVaso"
-import Cartao from "./components/cartao/cartao"
-import VerBuque from "./components/verBuque/verBuque"
+import EscolherFlor from "./components/escolherFlor/escolherFlor";
+import VerBuque from "./components/verBuque/verBuque";
 
 // estilos globais
-import "./styles/global.css"
+import "./styles/global.css";
 
 function App() {
   // flores escolhidas
-  const [flores, setFlores] = useState([])
+  const [flores, setFlores] = useState([]);
 
-  //vaso escolhido
-  const [vaso, setVaso] = useState(null)
+  // vaso escolhido
+  const [vaso, setVaso] = useState(null);
 
-  //mensagem do cartão
-  const [mensagem, setMensagem] = useState("")
+  // cartão escolhido
+  const [cartao, setCartao] = useState(null);
+
+  // mensagem escrita no cartão
+  const [mensagem, setMensagem] = useState("");
+
+  // etapa do usuário: montagem -> cartao -> finalizado
+  const [etapa, setEtapa] = useState("montagem");
 
   return (
     <div className="app">
       <h1>Monte seu buquê 🌷</h1>
 
+      {/* Painel de seleção de flores */}
       <EscolherFlor flores={flores} setFlores={setFlores} />
 
-      <EscolherVaso vaso={vaso} setVaso={setVaso} />
-
-      <Cartao mensagem={mensagem} setMensagem={setMensagem} />
-
+      {/* Área visual do buquê + vaso + cartão */}
       <VerBuque
         flores={flores}
         vaso={vaso}
+        setVaso={setVaso}
+        cartao={cartao}
+        setCartao={setCartao}
         mensagem={mensagem}
+        setMensagem={setMensagem}
+        etapa={etapa}
+        setEtapa={setEtapa}
       />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

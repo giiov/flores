@@ -1,22 +1,40 @@
-.escolher-vaso {
-  text-align: center;
-}
-
-.carrossel {
+.carrossel-vaso {
+  margin-top: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: 15px;
+  background: white;
+  padding: 10px 20px;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(255, 182, 193, 0.3);
 }
 
-.carrossel button {
-  font-size: 20px;
-  cursor: pointer;
-  background: none;
+.carrossel-vaso button {
+  background-color: #ffecf1;
   border: none;
-  color: rgb(255, 152, 212);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ff85a1;
+  font-size: 20px;
+  transition: 0.3s;
 }
 
-.vaso-img {
-  width: 140px;
+.carrossel-vaso button:hover {
+  background-color: #ff85a1;
+  color: white;
+  transform: scale(1.1);
+}
+
+.carrossel-vaso span {
+  font-family: 'Comic Sans MS', 'Segoe UI', cursive, sans-serif; /* Fonte mais lúdica */
+  color: #ff6b8d;
+  font-size: 16px;
+  min-width: 100px;
+  text-align: center;
 }
