@@ -1,0 +1,15 @@
+@import "./variaveis.css";
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg);
+}
+
+.app {
+  padding: 20px;
+}
+
+h1 {
+  color: var(--pink);
+}

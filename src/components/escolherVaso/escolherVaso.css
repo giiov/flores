@@ -1,0 +1,22 @@
+.escolher-vaso {
+  text-align: center;
+}
+
+.carrossel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.carrossel button {
+  font-size: 20px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: rgb(255, 152, 212);
+}
+
+.vaso-img {
+  width: 140px;
+}
