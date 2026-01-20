@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./cartao.css";
+import { ChevronLeft, ChevronRight, Heart, Send } from 'lucide-react';  
 
 // imagens dos cartões
 import cartao1 from "../../assets/cartoes/cartao1.png";
@@ -34,7 +35,7 @@ function Cartao({ cartao, setCartao, mensagem, setMensagem, setEtapa }) {
 
   return (
     <div className="cartao-container">
-      <h2>Escolha um cartão 💌</h2>
+      <h2>Escolha um cartão!<Heart size={18} fill="#9d81ba" color="#9d81ba" /></h2>
 
       {/* CARROSSEL DO CARTÃO */}
       <div className="cartao-carrossel">
@@ -61,8 +62,10 @@ function Cartao({ cartao, setCartao, mensagem, setMensagem, setEtapa }) {
             onChange={(e) => setMensagem(e.target.value)}
           />
 
-          <button onClick={() => setEtapa("finalizado")}>
-            Finalizar buquê 🌸
+          <button 
+            disabled={!mensagem.trim()}
+            onClick={() => setEtapa("finalizado")}>
+            Finalizar buquê <Send size={18} style={{ marginLeft: '8px' }} />
           </button>
         </div>
       )}

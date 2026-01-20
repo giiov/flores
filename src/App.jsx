@@ -1,4 +1,5 @@
 import { useState } from "react";
+import {Flower2 } from 'lucide-react';
 
 // componentes
 import EscolherFlor from "./components/escolherFlor/escolherFlor";
@@ -25,10 +26,12 @@ function App() {
 
   return (
     <div className="app">
-      <h1>Monte seu buquê 🌷</h1>
+      {etapa !== "finalizado" && <h1>Monte seu buquê <Flower2 size={30}  color="#9d81ba" /></h1>}
 
       {/* Painel de seleção de flores */}
-      <EscolherFlor flores={flores} setFlores={setFlores} />
+      {etapa !== "finalizado" && (
+        <EscolherFlor flores={flores} setFlores={setFlores} />
+      )}
 
       {/* Área visual do buquê + vaso + cartão */}
       <VerBuque

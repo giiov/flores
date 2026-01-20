@@ -1,4 +1,5 @@
 import "./verBuque.css";
+import { Heart, Sparkles, Flower, Sprout, Sun, } from 'lucide-react';
 
 // componentes
 import Cartao from "../cartao/cartao";
@@ -40,7 +41,7 @@ function VerBuque({
           {/*Flores sobrepostas dentro do vaso */}
           <div className="flores-camada">
             {flores.length === 0 && (
-              <p className="aviso-vazio">Seu buquê ainda está vazio 🌱</p>
+              <p className="aviso-vazio">Seu buquê ainda está vazio <Sprout color="#9d81ba" size={24} strokeWidth={1.5} /></p>
             )}
 
             {flores.map((flor, index) => (
@@ -70,22 +71,24 @@ function VerBuque({
           )}
 
           {/* Carrossel do vaso */}
-          <div className="carrossel-vaso">
-            <button onClick={anteriorVaso}>◀</button>
-            <span>{vaso ? vaso.nome : "Escolha um vaso"}</span>
-            <button onClick={proximoVaso}>▶</button>
-          </div>
+          {etapa !== "finalizado" && (
+            <div className="carrossel-vaso">
+              <button onClick={anteriorVaso}>◀</button>
+              <span>{vaso ? vaso.nome : "Escolha um vaso"}</span>
+              <button onClick={proximoVaso}>▶</button>
+            </div>
+          )}
         </div>
 
         {/* BOTÃO PARA ESCOLHER O CARTÃO */}
         {flores.length > 0 && vaso && etapa === "montagem" && (
           <button className="btn-cartao" onClick={() => setEtapa("cartao")}>
-            Escolher cartão 💌
+            Escolher cartão <Sparkles color="#FFFAF5" size={24} strokeWidth={1.5} />
           </button>
         )}
 
-        {/* Cartão ao lado */}
-        {etapa !== "montagem" && (
+        {/*ESCOLHER CARTÃO */}
+        {etapa === "cartao" && (
           <div className="cartao-area">
             <Cartao
               cartao={cartao}
@@ -95,6 +98,20 @@ function VerBuque({
               setEtapa={setEtapa}
             />
           </div>
+        )}
+
+        {/*FINALIZADO */}
+        {etapa === "finalizado" && (
+          <>
+            <h2 className="titulo-final"><Sun size={20} fill="#9d81ba" color="#9d81ba" />Seu buquê está pronto!<Flower size={20} color="#9d81ba" /></h2>
+
+            <div className="cartao-area">
+              <div className="cartao-final">
+                <img src={cartao} alt="Cartão escolhido" />
+                <p className="mensagem-final">{mensagem}</p>
+              </div>
+            </div>
+          </>
         )}
       </div>
     </div>

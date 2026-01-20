@@ -3,7 +3,7 @@
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
-  background-color: var(--bg);
+  background-color:#D1C4E9 ;
   display: flex;
   justify-content: center;
 }
@@ -13,7 +13,7 @@ body {
 }
 
 h1 {
-  color: var(--pink);
+  color: #9D81BA;
   font-size: 30px;
   display: flex;
   align-items: center;

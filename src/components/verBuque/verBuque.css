@@ -15,14 +15,17 @@
   align-items: center;
   justify-content: center;
   padding: 40px;
+  right: 50px;
   border-radius: 30px;
   gap: 30px;
   width: 100%;
   max-width: 1000px;
   margin: 0 auto;
-  background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 15px 35px rgba(255, 182, 193, 0.2);
+  background: #FFFAF5;
+  border:4px double #88B49E ;
+  /*backdrop-filter: blur(10px);*/
+  box-shadow: 0 15px 35px #88B49E;
+
 
 }
 
@@ -49,20 +52,20 @@
   position: absolute;
   width: 130px;
   object-fit: contain;
-  margin-bottom: -113px;
+  margin-bottom: -133px;
 
 }
 
 /*Vaso */
 .vaso-buque {
-  width: 160px;
+  width: 180px;
   z-index: 5;
   margin-top: -60px;
-  filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.1));
-  margin-bottom: -12px;
+  filter: drop-shadow(0 5px 10px #4A3F5A );
+  margin-bottom: 100px;
 }
 
-/* Carrossel de Vasos (agora fora do empilhamento absoluto) */
+/* Carrossel de Vasos*/
 .carrossel-vaso {
   margin-top: 15px;
   display: flex;
@@ -73,7 +76,15 @@
   border-radius: 50px;
   box-shadow: 0 4px 15px rgba(255, 182, 193, 0.3);
   z-index: 20;
-  color: black;
+  color: #4A3F5A;
+}
+
+.carrossel-vaso button {
+  background-color: #9D81BA;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 15px #4A3F5A;
 }
 
 /* Aviso de vazio */
@@ -82,26 +93,26 @@
   bottom: 200px;
   width: 100%;
   text-align: center;
-  color: #f4a7c1;
+  color: #4A3F5A;
   font-style: italic;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .btn-cartao {
-  background-color: #ff8fb3;
+  background-color: #9D81BA;
   color: white;
   border: none;
   padding: 15px 25px;
   border-radius: 30px;
   font-weight: bold;
   cursor: pointer;
-  box-shadow: 0 4px 15px rgba(255, 143, 179, 0.4);
+  box-shadow: 0 4px 15px #4A3F5A;
   transition: 0.3s;
 }
 
 .btn-cartao:hover {
   transform: scale(1.05);
-  background-color: #ff709b;
+  background-color: #4A3F5A;
 }
 
   .cartao-area {
@@ -111,6 +122,16 @@
   flex-direction: column;
   align-items: center;
 }
+
+.buque-final img {
+  width: 320px;
+}
+
+.cartao-final img {
+  width: 220px;
+  filter: drop-shadow(0 3px 8px #4A3F5A );
+}
+
 
 @media (max-width: 768px) {
   .buque-area {
@@ -127,4 +148,13 @@
     width: 300px;
     height: 190px;
   }
+}
+
+.titulo-final {
+  margin-bottom: 450px;
+  font-size: 20px;
+  color: #9D81BA;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

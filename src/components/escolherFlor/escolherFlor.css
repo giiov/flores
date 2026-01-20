@@ -1,14 +1,23 @@
 .escolher-flor {
   padding: 20px;
-  border: 2px dashed #ffc0d3; /* Rosa mais vivo, mas suave */
+  background: #FFFAF5;
+  border:4px double #88B49E ;
+  /*backdrop-filter: blur(10px);*/
+  box-shadow: 0 5px 35px #88B49E;
   border-radius: 20px;
   margin-bottom: 30px;
-  background-color: #fffafb; /* Fundo levemente rosado */
+  background-color: #fffafb;
   color: #555;
   height: 175px;
   width: 760px;
+  align-items: center;
+  justify-content: center;
 }
 
+.escolher-flor p {
+  font-size: 15px;
+  font-family: cursive;
+}
 .lista-flores {
   display: flex;
   gap: 12px;
@@ -23,20 +32,19 @@
   border-radius: 15px;
   border: 2px solid transparent;
   cursor: pointer;
-  background-color: #f7c7d9;
-  color: white;
+  background-color: #E0D4F0;
+  color: #4A3F5A;
   font-weight: 600;
   font-size: small;
   transition: all 0.2s ease;
-  box-shadow: 0 4px 0 #e5a9bf; /* Efeito 3D fofinho */
+  box-shadow: 0 4px 0 #9D81BA;
 }
 
 .lista-flores button:hover {
   transform: translateY(-2px);
-  background-color: #ffb1ce;
+  background-color: #9D81BA;
 }
 
 .lista-flores button:active {
   transform: translateY(2px);
-  box-shadow: 0 0px 0 #e5a9bf;
 }
